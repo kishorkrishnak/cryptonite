@@ -3,9 +3,9 @@ import { makeStyles } from "@mui/styles";
 import Carousel from "./Carousel";
 const Banner = () => {
   const useStyles = makeStyles(() => ({
-    banner: {
-      backgroundImage: "url(./banner.jpg)",
-    },
+    // banner: {
+    //   backgroundImage: "url(./banner.jpg)",
+    // },
     bannerContent: {
       height: 440,
       display: "flex",

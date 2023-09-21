@@ -1,13 +1,14 @@
-import { CircularProgress } from "@mui/material";
-import { ThemeProvider, createTheme } from "@mui/material/styles";
-import { makeStyles } from "@mui/styles";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Line } from "react-chartjs-2";
-import { CryptoState } from "../CryptoContext";
 import { HistoricalChart } from "../config/api";
-import { chartDays } from "../config/data";
+import { Line } from "react-chartjs-2";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
+import { CircularProgress } from "@mui/material";
+import Chart from "chart.js/auto";
+import { makeStyles } from "@mui/styles";
 import SelectButton from "./SelectButton";
+import { chartDays } from "../config/data";
+import { CryptoState } from "../CryptoContext";
 
 const CoinInfo = ({ coin }) => {
   const [historicData, setHistoricData] = useState();
@@ -47,11 +48,7 @@ const CoinInfo = ({ coin }) => {
     fetchHistoricData();
   }, [days]);
 
-  const darkTheme = createTheme({
-    palette: {
-      mode: "dark",
-    },
-  });
+  const darkTheme = createTheme();
   return (
     <ThemeProvider theme={darkTheme}>
       <div className={classes.container}>

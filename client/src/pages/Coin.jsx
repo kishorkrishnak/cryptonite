@@ -56,7 +56,7 @@ const Coin = () => {
       padding: 25,
       paddingBottom: 15,
       paddingTop: 0,
-      textAlign: "justify",
+      textAlign: "left",
     },
     marketData: {
       alignSelf: "start",

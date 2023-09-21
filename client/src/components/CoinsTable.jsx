@@ -32,7 +32,7 @@ const CoinsTable = () => {
   const [page, setPage] = useState(1);
 
   const { currency, symbol } = CryptoState();
-
+  const theme = createTheme();
   const useStyles = makeStyles({
     row: {
       backgroundColor: "#16171a",
@@ -46,6 +46,22 @@ const CoinsTable = () => {
       "& .MuiPaginationItem-root": {
         color: "gold",
       },
+    },
+    coinImage: {
+      height: 35,
+      [theme.breakpoints.up("lg")]: {
+        height: 50,
+      },
+    },
+    symbol: {
+      textTransform: "uppercase",
+      fontSize: 15, //subject to change
+      [theme.breakpoints.up("lg")]: {
+        fontSize: 22,
+      },
+    },
+    name: {
+      color: "darkgrey",
     },
   });
 
@@ -67,7 +83,6 @@ const CoinsTable = () => {
 
   useEffect(() => {
     fetchCoins();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currency]);
 
   const handleSearch = () => {
@@ -133,28 +148,19 @@ const CoinsTable = () => {
                           style={{
                             display: "flex",
                             gap: 15,
+                            alignItems: "center",
                           }}
                         >
                           <img
                             src={row?.image}
                             alt={row.name}
-                            height="50"
-                            style={{ marginBottom: 10 }}
+                            className={classes.coinImage}
                           />
                           <div
                             style={{ display: "flex", flexDirection: "column" }}
                           >
-                            <span
-                              style={{
-                                textTransform: "uppercase",
-                                fontSize: 22,
-                              }}
-                            >
-                              {row.symbol}
-                            </span>
-                            <span style={{ color: "darkgrey" }}>
-                              {row.name}
-                            </span>
+                            <span className={classes.symbol}>{row.symbol}</span>
+                            <span className={classes.name}>{row.name}</span>
                           </div>
                         </TableCell>
                         <TableCell align="right">
@@ -186,7 +192,6 @@ const CoinsTable = () => {
           )}
         </TableContainer>
 
-        {/* Comes from @material-ui/lab */}
         <Pagination
           count={(handleSearch()?.length / 10).toFixed(0)}
           style={{
