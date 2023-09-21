@@ -1,4 +1,4 @@
-import Home from "./Home";
 import Coin from "./Coin";
+import Home from "./Home";
 import Tweets from "./Tweets";
-export {Home,Coin,Tweets}
+export { Coin, Home, Tweets };

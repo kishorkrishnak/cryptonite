@@ -1,13 +1,13 @@
+import { LinearProgress, Typography, createTheme } from "@mui/material";
 import { makeStyles } from "@mui/styles";
-import { Typography, LinearProgress } from "@mui/material";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
 import ReactHtmlParser from "react-html-parser";
-import { CoinInfo, Header } from "../components";
-import { SingleCoin } from "../config/api";
-import { numberWithCommas } from "../components/CoinsTable";
+import { useParams } from "react-router-dom";
 import { CryptoState } from "../CryptoContext";
+import { CoinInfo, Header } from "../components";
+import { numberWithCommas } from "../components/CoinsTable";
+import { SingleCoin } from "../config/api";
 
 const Coin = () => {
   const { id } = useParams();
@@ -21,24 +21,24 @@ const Coin = () => {
     setCoin(data);
   };
 
+  const theme = createTheme();
   useEffect(() => {
     fetchCoin();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const useStyles = makeStyles((theme) => ({
+  const useStyles = makeStyles(() => ({
     container: {
       display: "flex",
-      // [theme.breakpoints.down("md")]: {
-      //   flexDirection: "column",
-      //   alignItems: "center",
-      // },
+      [theme.breakpoints.down("md")]: {
+        flexDirection: "column",
+        alignItems: "center",
+      },
     },
     sidebar: {
       width: "30%",
-      // [theme.breakpoints.down("md")]: {
-      //   width: "100%",
-      // },
+      [theme.breakpoints.down("md")]: {
+        width: "100%",
+      },
       display: "flex",
       flexDirection: "column",
       alignItems: "center",
@@ -63,17 +63,17 @@ const Coin = () => {
       padding: 25,
       paddingTop: 10,
       width: "100%",
-      // [theme.breakpoints.down("md")]: {
-      //   display: "flex",
-      //   justifyContent: "space-around",
-      // },
-      // [theme.breakpoints.down("sm")]: {
-      //   flexDirection: "column",
-      //   alignItems: "center",
-      // },
-      // [theme.breakpoints.down("xs")]: {
-      //   alignItems: "start",
-      // },
+      [theme.breakpoints.down("md")]: {
+        display: "flex",
+        justifyContent: "space-around",
+      },
+      [theme.breakpoints.down("sm")]: {
+        flexDirection: "column",
+        alignItems: "center",
+      },
+      [theme.breakpoints.down("xs")]: {
+        alignItems: "start",
+      },
     },
   }));
 

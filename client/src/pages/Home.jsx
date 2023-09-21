@@ -1,5 +1,5 @@
 import React from "react";
-import { Header, Banner, CoinsTable } from "../components";
+import { Banner, CoinsTable, Header } from "../components";
 const Home = () => {
   return (
     <>

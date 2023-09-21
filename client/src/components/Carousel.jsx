@@ -3,8 +3,8 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import AliceCarousel from "react-alice-carousel";
 import { Link } from "react-router-dom";
-import { TrendingCoins } from "../config/api";
 import { CryptoState } from "../CryptoContext";
+import { TrendingCoins } from "../config/api";
 import { numberWithCommas } from "./CoinsTable";
 
 const Carousel = () => {
@@ -18,7 +18,6 @@ const Carousel = () => {
 
   useEffect(() => {
     fetchTrendingCoins();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currency]);
 
   const useStyles = makeStyles((theme) => ({

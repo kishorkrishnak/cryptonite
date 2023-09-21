@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
 import axios from "axios";
+import React, { useEffect, useState } from "react";
 
 const TWITTER_API_URL = "https://api.twitter.com/2/tweets";
 

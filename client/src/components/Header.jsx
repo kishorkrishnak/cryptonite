@@ -9,8 +9,8 @@ import {
 } from "@mui/material";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { makeStyles } from "@mui/styles";
-import { CryptoState } from "../CryptoContext";
 import { useNavigate } from "react-router-dom";
+import { CryptoState } from "../CryptoContext";
 const Header = () => {
   const navigate = useNavigate();
   const useStyles = makeStyles(() => ({
@@ -31,14 +31,18 @@ const Header = () => {
     },
   });
 
+  const customAppBar = {
+    height: 80,
+    justifyContent: "center",
+  };
   return (
     <ThemeProvider theme={darkTheme}>
-      <AppBar color="transparent" position="static">
+      <AppBar sx={customAppBar} color="transparent" position="static">
         <Container>
           <Toolbar>
             <Typography
               onClick={() => navigate("/")}
-              variant="h6"
+              variant="h5"
               className={classes.title}
             >
               CryptoZen
@@ -57,8 +61,12 @@ const Header = () => {
             <Button sx={{ marginLeft: 0.5 }} color="inherit">
               Login
             </Button>
-         
-            <Button    onClick={() => navigate("/tweets")} sx={{ marginLeft: 0.5 }} color="inherit">
+
+            <Button
+              onClick={() => navigate("/tweets")}
+              sx={{ marginLeft: 0.5 }}
+              color="inherit"
+            >
               Elon Tweets
             </Button>
           </Toolbar>
