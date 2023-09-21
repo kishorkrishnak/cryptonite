@@ -1,21 +1,23 @@
 import {
   AppBar,
-  Box,
+  Button,
+  Container,
   MenuItem,
   Select,
   Toolbar,
-  Typography
+  Typography,
 } from "@mui/material";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { makeStyles } from "@mui/styles";
 import { CryptoState } from "../CryptoContext";
-
+import { useNavigate } from "react-router-dom";
 const Header = () => {
+  const navigate = useNavigate();
   const useStyles = makeStyles(() => ({
     title: {
       flex: 1,
       color: "gold",
-      // fontFamily
+      fontFamily: "Montserrat",
       fontWeight: "bold",
       cursor: "pointer",
     },
@@ -31,44 +33,37 @@ const Header = () => {
 
   return (
     <ThemeProvider theme={darkTheme}>
-      <Box sx={{ flexGrow: 1 }}>
-        <AppBar position="static">
+      <AppBar color="transparent" position="static">
+        <Container>
           <Toolbar>
             <Typography
-              className={classes.title}
+              onClick={() => navigate("/")}
               variant="h6"
-              component="div"
-              sx={{ flexGrow: 1 }}
+              className={classes.title}
             >
               CryptoZen
             </Typography>
             <Select
               variant="outlined"
-              style={{
-                width: 100,
-                height: 40,
-                marginRight: 15,
-              }}
+              labelId="demo-simple-select-label"
+              id="demo-simple-select"
               value={currency}
+              style={{ width: 100, height: 40, marginLeft: 15 }}
               onChange={(e) => setCurrency(e.target.value)}
             >
               <MenuItem value={"USD"}>USD</MenuItem>
               <MenuItem value={"INR"}>INR</MenuItem>
             </Select>
-          </Toolbar>
-        </AppBar>
-      </Box>
-
-      {/* <AppBar color="primary" position="static">
-        <Container>
-          <Toolbar >
-            <Link to={"/"}>
-              <Typography sx={{ flexGrow: 1 }} > CryptoZen</Typography>
-            </Link>
-          
+            <Button sx={{ marginLeft: 0.5 }} color="inherit">
+              Login
+            </Button>
+         
+            <Button    onClick={() => navigate("/tweets")} sx={{ marginLeft: 0.5 }} color="inherit">
+              Elon Tweets
+            </Button>
           </Toolbar>
         </Container>
-      </AppBar> */}
+      </AppBar>
     </ThemeProvider>
   );
 };

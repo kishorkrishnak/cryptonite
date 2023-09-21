@@ -1,7 +1,7 @@
-import Pagination from "@mui/lab/Pagination";
 import {
   Container,
   LinearProgress,
+  Pagination,
   Paper,
   Table,
   TableBody,
@@ -88,7 +88,7 @@ const CoinsTable = () => {
           Cryptocurrency Prices by Market Cap
         </Typography>
         <TextField
-          label="Search For a Crypto Currency.."
+          label="Search a Cryptocurrency"
           variant="outlined"
           style={{ marginBottom: 20, width: "100%" }}
           onChange={(e) => setSearch(e.target.value)}
