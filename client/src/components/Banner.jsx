@@ -7,7 +7,7 @@ const Banner = () => {
       backgroundImage: "url(./banner.jpg)",
     },
     bannerContent: {
-      height: 400,
+      height: 440,
       display: "flex",
       flexDirection: "column",
       paddingTop: 25,
