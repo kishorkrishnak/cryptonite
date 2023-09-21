@@ -1,0 +1,18 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #14161A;
+  color: white;
+  min-height: 100vh;
+}
+
+a{
+  color: gold;
+  text-decoration: none;
+}
