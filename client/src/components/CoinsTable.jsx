@@ -40,7 +40,7 @@ const CoinsTable = () => {
       "&:hover": {
         backgroundColor: "#131111",
       },
-      fontFamily: "Montserrat",
+   
     },
     pagination: {
       "& .MuiPaginationItem-root": {
@@ -98,7 +98,7 @@ const CoinsTable = () => {
       <Container style={{ textAlign: "center" }}>
         <Typography
           variant="h4"
-          style={{ margin: 18, fontFamily: "Montserrat" }}
+          style={{ margin: 18}}
         >
           Cryptocurrency Prices by Market Cap
         </Typography>
@@ -120,7 +120,7 @@ const CoinsTable = () => {
                       style={{
                         color: "black",
                         fontWeight: "700",
-                        fontFamily: "Montserrat",
+                       
                       }}
                       key={head}
                       align={head === "Coin" ? "" : "left"}
@@ -163,7 +163,7 @@ const CoinsTable = () => {
                             <span className={classes.name}>{row.name}</span>
                           </div>
                         </TableCell>
-                        <TableCell  align="left">
+                        <TableCell align="left">
                           {symbol}{" "}
                           {numberWithCommas(row.current_price.toFixed(2))}
                         </TableCell>

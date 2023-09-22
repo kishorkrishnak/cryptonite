@@ -8,7 +8,6 @@ const SelectButton = ({ children, selected, onClick }) => {
       padding: 10,
       paddingLeft: 20,
       paddingRight: 20,
-      fontFamily: "Montserrat",
       cursor: "pointer",
       backgroundColor: selected ? "gold" : "",
       color: selected ? "black" : "",

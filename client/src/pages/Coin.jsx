@@ -49,12 +49,9 @@ const Coin = () => {
       fontWeight: "bold",
       marginBottom: 20,
       margin: 0,
-
-      fontFamily: "Montserrat",
     },
     description: {
       width: "100%",
-      fontFamily: "Montserrat",
       padding: 25,
       paddingBottom: 15,
       paddingTop: 20,

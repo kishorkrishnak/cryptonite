@@ -35,7 +35,6 @@ function Header(props) {
     title: {
       flex: 1,
       color: "gold",
-      fontFamily: "Montserrat",
       fontWeight: "bold",
       cursor: "pointer",
     },
@@ -114,7 +113,7 @@ function Header(props) {
             >
               <div className={classes.brand}>
                 <img src={Logo} alt="logo" height={35} />
-                Cryptozen
+                Cryptonite
               </div>
             </Typography>
             <Select

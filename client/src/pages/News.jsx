@@ -1,4 +1,9 @@
-import { Container, Pagination, Typography } from "@mui/material";
+import {
+  Container,
+  LinearProgress,
+  Pagination,
+  Typography,
+} from "@mui/material";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { makeStyles } from "@mui/styles";
@@ -12,7 +17,7 @@ const News = () => {
   const fetchData = async () => {
     try {
       const response = await axios.get(
-        `https://cryptopanic.com/api/v1/posts/?auth_token=${
+        `https://cors-anywhere-x0cn.onrender.com/https://cryptopanic.com/api/v1/posts/?auth_token=${
           process.env.REACT_APP_CRYPTOPANIC_API_KEY
         }&page=${[page]}`
       );
@@ -43,7 +48,7 @@ const News = () => {
 
   return (
     <>
-      {articles && (
+      {articles ? (
         <ThemeProvider theme={darkTheme}>
           <Header></Header>
           <Container
@@ -77,6 +82,8 @@ const News = () => {
             }}
           />
         </ThemeProvider>
+      ) : (
+        <LinearProgress style={{ backgroundColor: "gold" }} />
       )}
     </>
   );
