@@ -59,7 +59,7 @@ const News = () => {
               paddingTop: 5,
             }}
           >
-            <Typography variant="h5">
+            <Typography variant="h4" sx={{ color: "greenyellow" }}>
               Stay Informed with the Latest Cryptocurrency Updates
             </Typography>
 
