@@ -46,7 +46,14 @@ const News = () => {
       {articles && (
         <ThemeProvider theme={darkTheme}>
           <Header></Header>
-          <Container sx={{ display: "flex", flexDirection: "column", gap: 3,paddingTop:5 }}>
+          <Container
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              gap: 2,
+              paddingTop: 5,
+            }}
+          >
             <Typography variant="h5">
               Stay Informed with the Latest Cryptocurrency Updates
             </Typography>

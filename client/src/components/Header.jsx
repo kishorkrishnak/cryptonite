@@ -78,13 +78,7 @@ function Header(props) {
           paddingX: 3,
         }}
       >
-        <Button
-          onClick={() => navigate("/tweets")}
-          variant="contained"
-          color="primary"
-        >
-          Elon Tweets
-        </Button>
+       
         <Button
           onClick={() => navigate("/news")}
           variant="contained"
@@ -137,14 +131,7 @@ function Header(props) {
               <MenuItem value={"INR"}>INR</MenuItem>
             </Select>
             <Box sx={{ display: { xs: "none", sm: "block" } }}>
-              <Button
-                onClick={() => navigate("/tweets")}
-                sx={{ marginLeft: 0.5 }}
-                variant="contained"
-                color="primary"
-              >
-                Elon Tweets
-              </Button>
+            
               <Button
                 onClick={() => navigate("/news")}
                 sx={{ marginLeft: 0.5 }}
