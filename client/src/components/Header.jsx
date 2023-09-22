@@ -1,27 +1,23 @@
-import PropTypes from "prop-types";
+import MenuIcon from "@mui/icons-material/Menu";
+import { MenuItem, Select } from "@mui/material";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
 import Divider from "@mui/material/Divider";
 import Drawer from "@mui/material/Drawer";
 import IconButton from "@mui/material/IconButton";
 import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemText from "@mui/material/ListItemText";
-import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
-import { useState } from "react";
-import { MenuItem, Select } from "@mui/material";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { makeStyles } from "@mui/styles";
+import PropTypes from "prop-types";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Logo } from "../assets/images";
 import { CryptoState } from "../CryptoContext";
+import { Logo } from "../assets/images";
 const drawerWidth = 240;
-const navItems = ["Home", "About", "Contact"];
 
 function Header(props) {
   const navigate = useNavigate();
@@ -32,6 +28,9 @@ function Header(props) {
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
   };
+
+  const container =
+    window !== undefined ? () => window().document.body : undefined;
   const useStyles = makeStyles(() => ({
     title: {
       flex: 1,
@@ -48,6 +47,7 @@ function Header(props) {
       gap: 6,
     },
   }));
+  const classes = useStyles();
 
   const darkTheme = createTheme({
     palette: {
@@ -57,8 +57,15 @@ function Header(props) {
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
-      <Typography variant="h6" sx={{ my: 2 }}>
-        MUI
+      <Typography
+        onClick={() => navigate("/")}
+        variant="h5"
+        className={classes.title}
+      >
+        <div className={classes.brand}>
+          <img src={Logo} alt="logo" height={35} />
+          CryptoZen
+        </div>
       </Typography>
       <Divider />
       <List
@@ -79,7 +86,7 @@ function Header(props) {
           Elon Tweets
         </Button>
         <Button
-          onClick={() => navigate("/tweets")}
+          onClick={() => navigate("/news")}
           variant="contained"
           color="primary"
         >
@@ -92,9 +99,6 @@ function Header(props) {
     </Box>
   );
 
-  const container =
-    window !== undefined ? () => window().document.body : undefined;
-  const classes = useStyles();
   return (
     <ThemeProvider theme={darkTheme}>
       <Box sx={{ display: "flex" }}>
@@ -104,7 +108,6 @@ function Header(props) {
           color="transparent"
           component="nav"
           sx={{
-            height: 65,
             justifyContent: "center",
             boxShadow: "none",
           }}
@@ -117,7 +120,7 @@ function Header(props) {
             >
               <div className={classes.brand}>
                 <img src={Logo} alt="logo" height={35} />
-                CryptoZen
+                Cryptozen
               </div>
             </Typography>
             <Select
@@ -143,17 +146,14 @@ function Header(props) {
                 Elon Tweets
               </Button>
               <Button
-                onClick={() => navigate("/tweets")}
+                onClick={() => navigate("/news")}
                 sx={{ marginLeft: 0.5 }}
                 variant="contained"
                 color="primary"
               >
                 News
               </Button>{" "}
-              <Button
-                variant="contained"
-                color="warning"
-              >
+              <Button variant="contained" color="warning">
                 Login
               </Button>
             </Box>

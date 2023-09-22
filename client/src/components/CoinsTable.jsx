@@ -123,7 +123,7 @@ const CoinsTable = () => {
                         fontFamily: "Montserrat",
                       }}
                       key={head}
-                      align={head === "Coin" ? "" : "right"}
+                      align={head === "Coin" ? "" : "left"}
                     >
                       {head}
                     </TableCell>
@@ -163,12 +163,12 @@ const CoinsTable = () => {
                             <span className={classes.name}>{row.name}</span>
                           </div>
                         </TableCell>
-                        <TableCell align="right">
+                        <TableCell  align="left">
                           {symbol}{" "}
                           {numberWithCommas(row.current_price.toFixed(2))}
                         </TableCell>
                         <TableCell
-                          align="right"
+                          align="left"
                           style={{
                             color: profit > 0 ? "rgb(14, 203, 129)" : "red",
                             fontWeight: 500,
@@ -177,7 +177,7 @@ const CoinsTable = () => {
                           {profit && "+"}
                           {row.price_change_percentage_24h.toFixed(2)}%
                         </TableCell>
-                        <TableCell align="right">
+                        <TableCell align="left">
                           {symbol}{" "}
                           {numberWithCommas(
                             row.market_cap.toString().slice(0, -6)

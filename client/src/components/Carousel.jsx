@@ -46,7 +46,7 @@ const Carousel = () => {
         <img
           src={coin?.image}
           alt={coin.name}
-          height="80"
+          height="70"
           style={{ marginBottom: 10 }}
         />
         <span>
