@@ -63,7 +63,7 @@ function Header(props) {
       >
         <div className={classes.brand}>
           <img src={Logo} alt="logo" height={35} />
-          CryptoZen
+          Cryptonite
         </div>
       </Typography>
       <Divider />
@@ -77,13 +77,19 @@ function Header(props) {
           paddingX: 3,
         }}
       >
-       
         <Button
           onClick={() => navigate("/news")}
           variant="contained"
           color="primary"
         >
           News
+        </Button>{" "}
+        <Button
+          onClick={() => navigate("/converter")}
+          variant="contained"
+          color="primary"
+        >
+          Convert
         </Button>{" "}
         <Button variant="contained" color="warning">
           Login
@@ -130,7 +136,6 @@ function Header(props) {
               <MenuItem value={"INR"}>INR</MenuItem>
             </Select>
             <Box sx={{ display: { xs: "none", sm: "block" } }}>
-            
               <Button
                 onClick={() => navigate("/news")}
                 sx={{ marginLeft: 0.5 }}
@@ -138,6 +143,13 @@ function Header(props) {
                 color="primary"
               >
                 News
+              </Button>{" "}
+              <Button
+                onClick={() => navigate("/converter")}
+                variant="contained"
+                color="primary"
+              >
+                Convert
               </Button>{" "}
               <Button variant="contained" color="warning">
                 Login
@@ -162,7 +174,7 @@ function Header(props) {
             open={mobileOpen}
             onClose={handleDrawerToggle}
             ModalProps={{
-              keepMounted: true, // Better open performance on mobile.
+              keepMounted: true,
             }}
             sx={{
               display: { xs: "block", sm: "none" },
@@ -181,10 +193,6 @@ function Header(props) {
 }
 
 Header.propTypes = {
-  /**
-   * Injected by the documentation to work in an iframe.
-   * You won't need it on your project.
-   */
   window: PropTypes.func,
 };
 

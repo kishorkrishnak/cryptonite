@@ -1,9 +1,7 @@
 import { Typography } from "@mui/material";
-import { Link, useNavigate } from "react-router-dom";
 import { makeStyles } from "@mui/styles";
 
 const NewsCard = ({ article }) => {
-  const navigate = useNavigate();
   const useStyles = makeStyles({
     card: {
       display: "flex",
@@ -13,11 +11,11 @@ const NewsCard = ({ article }) => {
       width: "98%",
       paddingTop: 10,
       paddingBottom: 10,
-      borderBottom:"1px solid #2b3343"
+      borderBottom: "1px solid #2b3343",
     },
-    subtitle:{
-        color:"#929294"
-    }
+    subtitle: {
+      color: "#929294",
+    },
   });
   function timeAgo(timestamp) {
     console.log(timestamp);
@@ -42,17 +40,12 @@ const NewsCard = ({ article }) => {
     }
   }
   function extractIdFromURL(url) {
-    // Define a regular expression pattern to match the numeric ID in the URL
     const pattern = /\/news\/(\d+)\//;
-
-    // Use the match method to extract the ID from the URL
     const matches = url.match(pattern);
-
-    // Check if there is a match and return the ID (if found)
     if (matches && matches.length > 1) {
       return matches[1];
     } else {
-      return null; // Return null if no ID was found
+      return null;
     }
   }
   const classes = useStyles();
@@ -65,7 +58,9 @@ const NewsCard = ({ article }) => {
       href={`https://cryptopanic.com/news/click/${articleId}/`}
     >
       <div className={classes.card}>
-        <Typography color="white" variant="h6">{article.title}</Typography>
+        <Typography color="white" variant="h6">
+          {article.title}
+        </Typography>
         <Typography variant="subtitle2" className={classes.subtitle}>
           {article.source.title} • {timeAgo(article.published_at)}
         </Typography>
