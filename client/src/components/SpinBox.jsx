@@ -1,5 +1,4 @@
 import { Button, TextField } from "@mui/material";
-import React from "react";
 
 const Spinbox = ({ value, setValue }) => {
   const handleIncrement = () => {

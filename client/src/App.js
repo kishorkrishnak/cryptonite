@@ -9,7 +9,6 @@ function App() {
       <Route path="/coins/:id" element={<Coin />}></Route>
       <Route path="/news" element={<News />}></Route>
       <Route path="/converter" element={<Converter />}></Route>
-
     </Routes>
   );
 }
