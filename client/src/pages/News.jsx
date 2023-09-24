@@ -10,6 +10,7 @@ import { makeStyles } from "@mui/styles";
 import NewsCard from "../components/NewsCard";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { Header } from "../components";
+import Footer from "../components/Footer";
 
 const News = () => {
   const [page, setPage] = useState(1);
@@ -81,6 +82,7 @@ const News = () => {
               window.scroll(0, 50);
             }}
           />
+          <Footer/>
         </ThemeProvider>
       ) : (
         <LinearProgress style={{ backgroundColor: "gold" }} />

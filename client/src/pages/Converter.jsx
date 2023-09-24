@@ -15,6 +15,7 @@ import { Swap } from "../assets/images";
 import { Header } from "../components";
 import Spinbox from "../components/SpinBox";
 import { CoinList, SingleCoin } from "../config/api";
+import Footer from "../components/Footer";
 
 const Converter = () => {
   const [value, setValue] = useState(0);
@@ -44,6 +45,7 @@ const Converter = () => {
     container: {
       display: "flex",
       paddingTop: 25,
+      paddingBottom: 100,
       justifyContent: "center",
       alignItems: "center",
     },
@@ -110,7 +112,7 @@ const Converter = () => {
   ];
 
   const resetConverter = () => {
-    setCurrentCoin("Bitcoin (BTC)");
+    setCurrentCoin("bitcoin");
   };
 
   const fetchCurrentPrice = async () => {
@@ -222,12 +224,12 @@ const Converter = () => {
                 }}
               >
                 {swapDirection === "COIN-CURR"
-                  ? `${value} ${currentCoin} = ${
-                      value * currentPrice
-                    } ${currentCurrency}`
-                  : `${value} ${currentCurrency} = ${
+                  ? `${value} ${currentCoin} = ${(value * currentPrice).toFixed(
+                      6
+                    )} ${currentCurrency}`
+                  : `${value} ${currentCurrency} = ${(
                       value / currentPrice
-                    } ${currentCoin}`}
+                    ).toFixed(6)} ${currentCoin}`}
               </Typography>
               <Button
                 onClick={resetConverter}
@@ -238,6 +240,7 @@ const Converter = () => {
               </Button>{" "}
             </Box>
           </Container>
+          <Footer />
         </ThemeProvider>
       )}
     </>

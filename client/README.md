@@ -1,2 +1,2 @@
-## CryptoZen 
+## Cryptonite
 ### Get all cryptocurrency information

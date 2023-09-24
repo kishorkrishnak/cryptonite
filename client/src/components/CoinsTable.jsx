@@ -94,7 +94,7 @@ const CoinsTable = () => {
 
   return (
     <ThemeProvider theme={darkTheme}>
-      <Container style={{ textAlign: "center" }}>
+      <Container style={{ textAlign: "center",paddingBottom:25 }}>
         <Typography variant="h4" style={{ margin: 18 }}>
           Cryptocurrency Prices by Market Cap
         </Typography>
