@@ -40,7 +40,6 @@ const CoinsTable = () => {
       "&:hover": {
         backgroundColor: "#131111",
       },
-   
     },
     pagination: {
       "& .MuiPaginationItem-root": {
@@ -96,10 +95,7 @@ const CoinsTable = () => {
   return (
     <ThemeProvider theme={darkTheme}>
       <Container style={{ textAlign: "center" }}>
-        <Typography
-          variant="h4"
-          style={{ margin: 18}}
-        >
+        <Typography variant="h4" style={{ margin: 18 }}>
           Cryptocurrency Prices by Market Cap
         </Typography>
         <TextField
@@ -120,7 +116,6 @@ const CoinsTable = () => {
                       style={{
                         color: "black",
                         fontWeight: "700",
-                       
                       }}
                       key={head}
                       align={head === "Coin" ? "" : "left"}

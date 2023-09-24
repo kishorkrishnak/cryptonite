@@ -3,7 +3,7 @@ import { Banner, CoinsTable, Header } from "../components";
 const Home = () => {
   return (
     <>
-      <Header />
+      <Header currencySelect={true} />
       <Banner />
       <CoinsTable />
     </>

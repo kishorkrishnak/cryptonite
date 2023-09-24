@@ -1,3 +1,3 @@
 import Logo from "./logo.svg";
-
-export { Logo };
+import Swap from './swap.svg';
+export { Logo ,Swap};

@@ -21,6 +21,47 @@ const drawerWidth = 240;
 
 function Header(props) {
   const navigate = useNavigate();
+  const currencyList = [
+    "AED",
+    "ARS",
+    "AUD",
+    "BDT",
+    "BHD",
+    "BMD",
+    "BRL",
+    "CAD",
+    "CHF",
+    "CLP",
+    "CZK",
+    "DKK",
+    "GBP",
+    "HKD",
+    "HUF",
+    "ILS",
+    "INR",
+    "JPY",
+    "KWD",
+    "LKR",
+    "MMK",
+    "MXN",
+    "MYR",
+    "NGN",
+    "NOK",
+    "NZD",
+    "PHP",
+    "PKR",
+    "PLN",
+    "SAR",
+    "SEK",
+    "SGD",
+    "THB",
+    "TRY",
+    "UAH",
+    "VEF",
+    "VND",
+    "ZAR",
+    "XDR",
+  ];
 
   const { window } = props;
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -34,7 +75,7 @@ function Header(props) {
   const useStyles = makeStyles(() => ({
     title: {
       flex: 1,
-      color: "gold",
+      color: "white",
       fontWeight: "bold",
       cursor: "pointer",
     },
@@ -77,6 +118,21 @@ function Header(props) {
           paddingX: 3,
         }}
       >
+        {props.currencySelect && (
+          <Select
+            variant="outlined"
+            style={{
+              width: 100,
+              height: 40,
+              marginRight: 15,
+            }}
+            value={currency}
+            onChange={(e) => setCurrency(e.target.value)}
+          >
+            <MenuItem value={"USD"}>USD</MenuItem>
+            <MenuItem value={"INR"}>INR</MenuItem>
+          </Select>
+        )}
         <Button
           onClick={() => navigate("/news")}
           variant="contained"
@@ -122,19 +178,21 @@ function Header(props) {
                 Cryptonite
               </div>
             </Typography>
-            <Select
-              variant="outlined"
-              style={{
-                width: 100,
-                height: 40,
-                marginRight: 15,
-              }}
-              value={currency}
-              onChange={(e) => setCurrency(e.target.value)}
-            >
-              <MenuItem value={"USD"}>USD</MenuItem>
-              <MenuItem value={"INR"}>INR</MenuItem>
-            </Select>
+            {props.currencySelect && (
+              <Select
+                variant="outlined"
+                style={{
+                  width: 100,
+                  height: 40,
+                  marginRight: 15,
+                }}
+                value={currency}
+                onChange={(e) => setCurrency(e.target.value)}
+              >
+                {currencyList.map((currency) =><MenuItem value={currency}>{currency}</MenuItem>)}
+                
+              </Select>
+            )}
             <Box sx={{ display: { xs: "none", sm: "block" } }}>
               <Button
                 onClick={() => navigate("/news")}
