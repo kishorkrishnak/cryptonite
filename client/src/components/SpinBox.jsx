@@ -7,7 +7,7 @@ const Spinbox = ({ value, setValue }) => {
 
   const handleDecrement = () => {
     const newValue = value - 1;
-    if (newValue > 0) setValue(newValue);
+    if (newValue >= 0) setValue(newValue);
   };
 
   return (

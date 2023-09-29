@@ -113,6 +113,8 @@ const Converter = () => {
 
   const resetConverter = () => {
     setCurrentCoin("bitcoin");
+    setCurrentCurrency("INR");
+    setValue(0);
   };
 
   const fetchCurrentPrice = async () => {
