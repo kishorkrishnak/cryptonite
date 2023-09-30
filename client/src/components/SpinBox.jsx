@@ -28,12 +28,11 @@ const Spinbox = ({ value, setValue }) => {
         onChange={(e) => {
           const inputValue = e.target.value;
 
-          // Use a regular expression to check if the input is a valid number (decimal or integer)
           if (
             /^[0-9]*\.?[0-9]*$/.test(inputValue) ||
             inputValue.trim() === ""
           ) {
-            // Update the state if the input is valid or empty
+            
             if (inputValue.slice(-1) === ".") setValue(inputValue);
             else if (inputValue === "") setValue(0);
             else {
