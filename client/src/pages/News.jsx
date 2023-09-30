@@ -18,7 +18,7 @@ const News = () => {
   const fetchData = async () => {
     try {
       const response = await axios.get(
-        `https://cors-anywhere-x0cn.onrender.com/https://cryptopanic.com/api/v1/posts/?auth_token=${
+        `${process.env.REACT_APP_CORS_PROXY_URL}/https://cryptopanic.com/api/v1/posts/?auth_token=${
           process.env.REACT_APP_CRYPTOPANIC_API_KEY
         }&page=${[page]}`
       );
